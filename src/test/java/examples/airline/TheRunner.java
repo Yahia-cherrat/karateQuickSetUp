@@ -8,7 +8,10 @@ class TheRunner {
 //    Karate airlineTest() {
 //        return Karate.run("JSONPath").relativeTo(getClass());
 //    }
+//    Karate airlineTest() {
+//        return Karate.run("CreateAirlineScenarioOutline").relativeTo(getClass());
+//    }
     Karate airlineTest() {
-        return Karate.run("CreateAirlineScenarioOutline").relativeTo(getClass());
+        return Karate.run("FuzzyMatchers").relativeTo(getClass());
     }
 }
