@@ -16,20 +16,35 @@ Feature: Scenario outline - basics
 #      | yahia | 7  | false   |
 #      | joe   | 27 | true    |
 
-  Scenario Outline: basics of data driven - JSON payload
+#  Scenario Outline: basics of data driven - JSON payload
+#    * def jsonDoc =
+#    """
+#      {
+#        "name" : "<fn>",
+#        "id" : <id>,
+#        "isManager" : <manager>
+#      }
+#    """
+#    * print jsonDoc
+#    * print __row
+#    * print __num
+#
+#    Examples:
+#      | fn    | id | manager |
+#      | yahia | 7  | false   |
+#      | joe   | 27 | true    |
+
+  Scenario Outline: basics of data driven - JSON payload - from JSON file
     * def jsonDoc =
     """
       {
-        "name" : "<fn>",
+        "name" : "<name>",
         "id" : <id>,
         "isManager" : <manager>
       }
     """
     * print jsonDoc
-    * print __row
-    * print __num
 
     Examples:
-      | fn    | id | manager |
-      | yahia | 7  | false   |
-      | joe   | 27 | true    |
+#      | read('payloads/MOCK_DATA.json') |
+      | read('payloads/MOCK_DATA.csv') |
